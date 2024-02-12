@@ -5,9 +5,11 @@ console.log(a.concat(b));
 
 console.log(a.copyWithin(0,3,5));
 
-iterator = a.entries()
+let iterator = a.entries()
 
-iterator.forEach(x => console.log(x));
+for (let [index, item] of iterator) {
+    console.log(index, item);
+}
 
 console.log(a.every(x => x < 10));
 
@@ -30,19 +32,22 @@ console.log(a.indexOf(8));
 console.log(a.join());
 
 iterador = a.keys()
-iterador.forEach(x => console.log(x));
+
+for (let i of iterador) {
+    console.log(i);
+}
 
 console.log(a.lastIndexOf(1));
 
 console.log(a.map(x => x+(x/2)));
 
-console.log(b.pop());
+console.log(a.pop());
 
 console.log(a.push(10));
 
-console.log(a.reduce((x, y) => x + y), 0);
+console.log(b.reduce((x, y) => x + y), 0);
 
-console.log(a.reduceRight((x, y) => x - y,100));
+console.log(b.reduceRight((x, y) => x - y,100));
 
 console.log(a.reverse());
 
@@ -56,7 +61,7 @@ console.log(a.sort());
 
 console.log(a.splice(0,0,1));
 
-console.log(a.toLocaleString("es-CO", { style: "currency", currency: "COP" })); 
+console.log(b.toLocaleString("es-CO", { style: "currency", currency: "COP" })); 
 
 console.log(a.toString());
 
@@ -64,6 +69,8 @@ console.log(a.unshift("inicio del array"));
 
 iterador = a.values();
 
-iterador.forEach(x => console.log(x));
+for (let x of iterador) {
+    console.log(x);
+}
 
 
