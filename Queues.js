@@ -18,3 +18,30 @@ class Queue {
         console.log(this.items);
     }
 }
+
+class person {
+    constructor(name, arrivedtime){
+        this.name = name;
+        this.arrivedtime = arrivedtime;
+    }
+}
+
+const generateRandomString = (num) => {
+    const characters =
+        'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result1 = ' ';
+    const charactersLength = characters.length;
+    for (let i = 0; i < num; i++) {
+      result1 +=
+        characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result1;
+}
+
+const persons = new Queue();
+
+for (let i = 0; i < 10; i++){
+    persons.enqueue(new person(generateRandomString(10), i));
+}
+
+console.log(persons.print());
