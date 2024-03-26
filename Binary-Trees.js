@@ -14,7 +14,7 @@ class BinaryTree{
     constructor(){
         this.root = null
     }
-    instert(value){
+    insert(value){
         const NewNode = node(value)
         if (!this.root){
             this.root = NewNode
@@ -37,7 +37,43 @@ class BinaryTree{
                         current = current.left
                     }
                 }
+                if(current.value < value){
+                    if(!current.right){
+                        current.right = NewNode
+                        isFound = true
+                        return this
+                    }
+                    else{
+                        current = current.right
+                    }
+                }
             }
         }
     }
+
+    preorder(node = this.root){
+        if(!node){
+            return;
+        }
+        console.log(node.value);
+        this.preorder(node.left);
+        this.preorder(node.right);
+    }
+    postorder(node = this.root){
+        if (!node){
+            return;
+        }
+        this.preorder(node.left);
+        this.preorder(node.right);
+        console.log(node.value);
+    }
+    inorder(node = this.root){
+        if (!node){
+            return;
+        }
+        this.preorder(node.left);
+        console.log(node.value);
+        this.preorder(node.right);
+    }
+    
 }
