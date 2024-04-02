@@ -13,10 +13,10 @@ class NaryTree {
         this.root = null;
     }
     search(value, node = this.root){
-        if(this.root.value == value){
+        if(JSON.stringify(this.root.value) == JSON.stringify(value)){
             return this.root;
         }else{
-            const inchildren = node.children.find(item => item.value == value);
+            const inchildren = node.children.find(item => JSON.stringify(item.value) == JSON.stringify(value));
             if (inchildren){
                 return inchildren
             }else{
@@ -41,8 +41,8 @@ class NaryTree {
                 return null
             }
         }else{
-            const parentNode = this.search(parent)
-            parentNode.children.push(newNode)
+            const parentNode = this.search(parent);
+            parentNode.children.push(newNode);
         }
     }
 
@@ -50,7 +50,7 @@ class NaryTree {
         if(!node){
             return
         }
-        console.log(node.value, node.children)
+        console.log(node.value)
         node.children.forEach(child => this.preOrder(child))
     }
     postOrder(node = this.root){
@@ -58,7 +58,7 @@ class NaryTree {
             return
         }
         node.children.forEach(child => this.postOrder(child))
-        console.log(node.children, node.value)
+        console.log(node.value)
     }
     inOrder(node = this.root){
         if(!node){
@@ -76,3 +76,22 @@ class NaryTree {
     }
 }
 
+
+const ftree = new NaryTree
+
+ftree.insert({name:"Juan Pablo Castaño",bd:"15/10"})
+ftree.insert({name:"Luz Enith Campo",bd:"7/9"},{name:"Juan Pablo Castaño",bd:"15/10"})
+ftree.insert({name:"Juan Carlos Castaño",bd:"5/11"},{name:"Juan Pablo Castaño",bd:"15/10"})
+ftree.insert({name:"Emilio Campo",bd:"19/2"},{name:"Luz Enith Campo",bd:"7/9"})
+ftree.insert({name:"Dora Sarria", bd:"5/5"},{name:"Luz Enith Campo",bd:"7/9"}) 
+ftree.insert({name:"Juan Manuel Castaño",bd:"9/2"},{name:"Juan Carlos Castaño",bd:"5/11"})
+ftree.insert({name:"Paulina Ceballos",bd:"10/12"},{name:"Juan Carlos Castaño",bd:"5/11"})
+
+
+
+console.log("--------Preorder--------")
+ftree.preOrder()
+console.log("--------Postorder-------")
+ftree.postOrder()
+console.log("--------Inorder---------")
+ftree.inOrder()
