@@ -1,8 +1,11 @@
+import FirstApp from "./FirstApp";
+import ComponentApp from "./componentapp";
+
 function App () {
     return (
         <>
-            <h1>hola mundo</h1>
-            <h2>Bienvenido</h2>
+            <FirstApp title = "Second App"/>
+            <ComponentApp/>
         </>
     )
 }
