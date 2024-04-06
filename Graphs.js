@@ -1,3 +1,5 @@
+const { array } = require("prop-types");
+
 class graph {
     constructor() {
         this.nodes = [];
@@ -21,6 +23,40 @@ class graph {
         return;
     }
     printAdjList(value) {
-        this.adjList.length? console.log(this.adjList[value]): console.log("el grafo está vacío");
+        this.adjList? console.log(this.adjList[value]): console.log("el grafo está vacío");
     }
 }
+
+
+const citiesandfriends = new graph();
+
+citiesandfriends.addnode("Cali");
+citiesandfriends.addnode("Caucasia");
+citiesandfriends.addnode("Bogota");
+citiesandfriends.addnode("Jamundi");
+citiesandfriends.addnode("Medellin");
+
+citiesandfriends.addnode("Juan")
+citiesandfriends.addnode("Paula")
+citiesandfriends.addnode("Yisel")
+citiesandfriends.addnode("Andrea")
+citiesandfriends.addnode("Sofia")
+citiesandfriends.addnode("Esteban")
+citiesandfriends.addnode("Julian")
+citiesandfriends.addnode("Dora")
+citiesandfriends.addnode("Sara")
+citiesandfriends.addnode("Luis")
+
+citiesandfriends.addedge("Cali", "Juan")
+citiesandfriends.addedge("Cali", "Sara")
+citiesandfriends.addedge("Jamundi", "Yisel")
+citiesandfriends.addedge("Jamundi", "Andrea")
+citiesandfriends.addedge("Bogota", "Paula")
+citiesandfriends.addedge("Bogota", "Dora")
+citiesandfriends.addedge("Caucasia", "Julian")
+citiesandfriends.addedge("Caucasia", "Luis")
+citiesandfriends.addedge("Medellin", "Sofia")
+citiesandfriends.addedge("Medellin", "Esteban")
+
+citiesandfriends.printgraph()
+citiesandfriends.printAdjList("Cali")
