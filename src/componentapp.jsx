@@ -1,27 +1,11 @@
-const categories = [
-    "Action",
-    "Comedy",
-    "Horror",
-    "Romance",
-    "Thriller",
-    "Drama",
-    "Fantasy",
-    "Science Fiction",
-    "Mystery",
-    "Historical",
-    "War",
-    "Western",
-    "Documentary",
-    "Animation",
-    "Adventure",
-]
 
-const ComponentApp = () => {
+
+const ComponentApp = ({items}) => {
 
     return(
         <>
             <ol>
-                {categories.map((category, key) => {
+                {items.map((category, key) => {
                     return <li key={key}>{category}</li>
                 })}
             </ol>
