@@ -1,11 +1,9 @@
-import FirstApp from "./FirstApp";
-import ComponentApp from "./componentapp";
+import FirstApp from "./FirstApp";  
 
 function App () {
     return (
         <>
             <FirstApp title = "Second App"/>
-            <ComponentApp/>
         </>
     )
 }
