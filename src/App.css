@@ -40,3 +40,26 @@
 .read-the-docs {
   color: #888;
 }
+
+.searchContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.result {
+  box-sizing: border-box;
+  position: relative;
+}
+
+.result-title {
+  height: 70px;
+  overflow-y: hidden;
+}
+
+img {
+  max-height: 200px;
+}

@@ -1,30 +1,15 @@
-import FirstApp from "./FirstApp";
-import ComponentApp from "./componentapp";
 import CategorieInput from "./CategorieInput";
 import AddCategories from "./AddCategories";
 import { useState } from "react"; 
+import "./index.css"
+import "./App.css"
+import GiftGrid from "./GiftGrid";
 
 
 
 function App () {
 
-    const [categories, setCategories] = useState([
-        "Action",
-        "Comedy",
-        "Horror",
-        "Romance",
-        "Thriller",
-        "Drama",
-        "Fantasy",
-        "Science Fiction",
-        "Mystery",
-        "Historical",
-        "War",
-        "Western",
-        "Documentary",
-        "Animation",
-        "Adventure",
-    ])
+    const [categories, setCategories] = useState([])
     const [NewCategory, setNewCategory] = useState("")	
     
     const handleChange = (value) => {
@@ -35,10 +20,9 @@ function App () {
     }
     return (
         <>
-            <FirstApp title = "Second App"/>
-            <ComponentApp items = {categories}/>
             <CategorieInput handleChange = {handleChange}/>
             <AddCategories handleClick = {handleClick}/>
+            {categories.map(category => <GiftGrid category={category}/>)}   
         </>
     )
 }
