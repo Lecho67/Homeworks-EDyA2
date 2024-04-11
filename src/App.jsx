@@ -1,4 +1,3 @@
-import FirstApp from "./FirstApp";
 import ComponentApp from "./componentapp";
 import CategorieInput from "./CategorieInput";
 import AddCategories from "./AddCategories";
@@ -35,7 +34,6 @@ function App () {
     }
     return (
         <>
-            <FirstApp title = "Second App"/>
             <ComponentApp items = {categories}/>
             <CategorieInput handleChange = {handleChange}/>
             <AddCategories handleClick = {handleClick}/>
